@@ -140,11 +140,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
-  ["nvim-dap"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/opt/nvim-dap"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
@@ -192,10 +187,6 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ["todo-comments"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/todo-comments"
   },
   ["todo-comments.nvim"] = {
     config = { "\27LJ\2\2;\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0" },

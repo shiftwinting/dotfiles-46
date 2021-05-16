@@ -53,8 +53,7 @@ return require("packer").startup(
         use "kdav5758/TrueZen.nvim"
         use "folke/which-key.nvim"
         use "sindrets/diffview.nvim"
-        use "folke/todo-comments"
-        use {'iamcco/markdown-preview.nvim', config = "vim.call('mkdp#util#install')"}     
+        use {"markdown-preview.nvim", config = "vim.call('mkdp#util#install')"}     
 
         -- COnfigure and list todo-comments
         use { "folke/todo-comments.nvim", config = function()

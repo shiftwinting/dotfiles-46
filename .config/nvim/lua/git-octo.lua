@@ -1,8 +1,11 @@
-require"octo".setup({
+require("octo").setup{
   date_format = "%Y %b %d %I:%M %p %Z";    -- date format
   default_remote = {"upstream", "origin"}; -- order to try remotes
   reaction_viewer_hint_icon = "";         -- marker for user reactions
   user_icon = " ";                        -- user icon
+  comment_icon = " ";
+  outdated_icon = " ";
+  resolved_icon = " ";
   timeline_marker = "";                   -- timeline marker
   timeline_indent = "2";                   -- timeline indentation
   right_bubble_delimiter = "";            -- Bubble delimiter
@@ -117,5 +120,4 @@ require"octo".setup({
       close_review_tab = "<C-c>",          -- close review tab
     }
   }
-})
-end}
+}

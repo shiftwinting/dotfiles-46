@@ -5,6 +5,7 @@ require "file-icons"
 require "misc-utils"
 require "top-bufferline"
 require "statusline"
+require "whichkey"
 
 require("neoscroll").setup() -- smooth scroll
 
@@ -60,8 +61,10 @@ require "mappings"
 require "telescope-nvim"
 require "nvimTree"
 
--- git signs , lsp symbols etc
+-- git related , lsp symbols etc
 require "gitsigns-nvim"
+require "diffview-git"
+require "git-octo"
 require("nvim-autopairs").setup()
 require("lspkind").init()
 
