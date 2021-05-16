@@ -6,7 +6,6 @@ require "misc-utils"
 require "top-bufferline"
 require "statusline"
 
-require("colorizer").setup()
 require("neoscroll").setup() -- smooth scroll
 
 -- lsp stuff
@@ -19,13 +18,28 @@ local g = vim.g
 g.mapleader = " "
 g.auto_save = 0
 
--- colorscheme related stuff
+-- colorscheme related stuff start
 cmd "syntax on"
 
-local base16 = require "base16"
-base16(base16.themes["onedark"], true)
+-- Tokynight Configuration
+g.tokyonight_style = "storm"
+g.tokyonight_italic_functions = true
+g.tokyonight_transparent = true
+cmd[[colorscheme tokyonight]]
+
+-- Base16 Configuration
+-- local base16 = require "base16"
+-- base16(base16.themes["onedark"], true)
+
+-- Material Deep Ocean Configuration
+-- g.material_style = "deep ocean"
+-- g.material_italic_functions = true
+-- g.material_disable_background = true
+-- require('material').set()
 
 require "custom_highlights"
+
+-- colorscheme related stuff end
 
 -- blankline
 
@@ -58,3 +72,4 @@ vim.api.nvim_exec([[
 
 -- setup for TrueZen.nvim
 require "zenmode"
+

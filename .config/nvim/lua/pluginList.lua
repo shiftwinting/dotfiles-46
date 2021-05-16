@@ -7,9 +7,10 @@ return require("packer").startup(
         use "wbthomason/packer.nvim"
 
         -- color related stuff
+        use 'folke/tokyonight.nvim'
         use "siduck76/nvim-base16.lua"
         use "norcalli/nvim-colorizer.lua"
-        -- use "ollykel/v-vim" -- v syntax highlighter
+        use 'marko-cerovac/material.nvim'
 
         -- lsp stuff
         use "nvim-treesitter/nvim-treesitter"
@@ -18,13 +19,21 @@ return require("packer").startup(
         use "onsails/lspkind-nvim"
         use "sbdchd/neoformat"
         use "nvim-lua/plenary.nvim"
+        use "folke/trouble.nvim"
+        use 'folke/lsp-colors.nvim'
 
+        -- Debugging stuff
+        -- use {"mfussenegger/nvim-dap", opt = true} --TODO: Configure nvim-dap with UI and python.
+
+        -- GitHub related
         use "lewis6991/gitsigns.nvim"
+        use "pwntester/octo.nvim"
+
         use "akinsho/nvim-bufferline.lua"
         use "glepnir/galaxyline.nvim"
         use "windwp/nvim-autopairs"
         use "alvan/vim-closetag"
-        
+
         -- snippet support
         use "hrsh7th/vim-vsnip"
         use "rafamadriz/friendly-snippets"
@@ -42,10 +51,19 @@ return require("packer").startup(
         use "907th/vim-auto-save"
         use "karb94/neoscroll.nvim"
         use "kdav5758/TrueZen.nvim"
+        use "folke/which-key.nvim"
+        use "sindrets/diffview.nvim"
+        use "folke/todo-comments"
+        use {'iamcco/markdown-preview.nvim', config = "vim.call('mkdp#util#install')"}     
 
+        -- COnfigure and list todo-comments
+        use { "folke/todo-comments.nvim", config = function()
+          require("todo-comments").setup()
+        end}
 
         -- discord rich presence
-        --use "andweeb/presence.nvim"
+        -- TODO: Confgure rich presence
+        use "andweeb/presence.nvim"
 
         use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
     end,
@@ -55,3 +73,4 @@ return require("packer").startup(
         }
     }
 )
+
