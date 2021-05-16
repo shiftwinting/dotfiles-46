@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Preview csv in terminal
+# source: http://stackoverflow.com/questions/1875305/command-line-csv-viewer
+
+sed 's/,,/, ,/g;s/,,/, ,/g' "$@" | column -s, -t | less -#2 -N -S

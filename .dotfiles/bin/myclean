@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+RESET="\033[0m"
+YELLOW="\033[38;5;11m"
+
+read -p "$(echo -e $YELLOW"Would you like to clean up __pycache__? (y/n)" $RESET)" input
+if [ "$input" = "y" ]; then
+  find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
+fi
+
+# ---
+
+read -p "$(echo -e $YELLOW"Would you like to do an apt clean? (y/n)" $RESET)"  input
+if [ "$input" = "y" ]; then
+  sudo apt-get update
+  sudo apt-get -f install
+  sudo apt-get -y autoremove
+  sudo apt-get clean
+fi
+
+# ---
+
+read -p "$(echo -e $YELLOW"Would you like to rotate and delete old logs? (y/n)" $RESET)"  input
+if [ "$input" = "y" ]; then
+  /etc/cron.daily/logrotate
+  sudo find /var/log -type f -iname *.gz -delete
+  sudo journalctl --rotate
+  sudo journalctl --vacuum-time=1s
+  # Clean up old compress log files from the system
+  sudo rm -v /var/log/*.gz
+fi
+
+# ---
+
+read -p "$(echo -e $YELLOW"Would you like to clean docker? (y/n)" $RESET)"  input
+if [ "$input" = "y" ]; then
+  docker rm $(docker ps --all -q -f status=exited)
+  docker volume rm $(docker volume ls -qf dangling=true)
+fi
+
+# --
+
+read -p "$(echo -e $YELLOW"Would you like to clean thumbnails cache? (y/n)" $RESET)"  input
+if [ "$input" = "y" ]; then
+  rm -rf ~/.cache/thumbnails/*
+fi
+
