@@ -19,7 +19,7 @@ local g = vim.g
 g.mapleader = " "
 g.auto_save = 0
 
--- colorscheme related stuff start
+-- area start: colorscheme related stuff
 cmd "syntax on"
 
 -- Tokynight Configuration
@@ -35,12 +35,11 @@ cmd[[colorscheme tokyonight]]
 -- Material Deep Ocean Configuration
 -- g.material_style = "deep ocean"
 -- g.material_italic_functions = true
--- g.material_disable_background = true
 -- require('material').set()
 
 require "custom_highlights"
 
--- colorscheme related stuff end
+-- area end: colorscheme related stuff
 
 -- blankline
 

@@ -7,10 +7,10 @@ return require("packer").startup(
         use "wbthomason/packer.nvim"
 
         -- color related stuff
-        use 'folke/tokyonight.nvim'
+        use "folke/tokyonight.nvim"
         use "siduck76/nvim-base16.lua"
         use "norcalli/nvim-colorizer.lua"
-        use 'marko-cerovac/material.nvim'
+        use "marko-cerovac/material.nvim"
 
         -- lsp stuff
         use "nvim-treesitter/nvim-treesitter"
@@ -20,7 +20,7 @@ return require("packer").startup(
         use "sbdchd/neoformat"
         use "nvim-lua/plenary.nvim"
         use "folke/trouble.nvim"
-        use 'folke/lsp-colors.nvim'
+        use "folke/lsp-colors.nvim"
 
         -- Debugging stuff
         -- use {"mfussenegger/nvim-dap", opt = true} --TODO: Configure nvim-dap with UI and python.
