@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+mkdir -p "builds"
+
+fileNoExtension="${1%%.*}"
+
+/usr/bin/gcc-10 -g $1 -o builds/$fileNoExtension
+
+./builds/$fileNoExtension
