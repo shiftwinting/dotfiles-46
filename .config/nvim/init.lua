@@ -4,7 +4,8 @@ require "file-icons"
 
 require "misc-utils"
 require "top-bufferline"
-require "statusline"
+require "statusline-onedark" -- for tokyonight and one dark theme
+-- require "statusline-nord" -- for nord theme
 require "whichkey"
 
 require("neoscroll").setup() -- smooth scroll
@@ -12,6 +13,8 @@ require("neoscroll").setup() -- smooth scroll
 -- lsp stuff
 require "nvim-lspconfig"
 require "compe-completion"
+-- vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
+
 
 local cmd = vim.cmd
 local g = vim.g
@@ -23,19 +26,18 @@ g.auto_save = 0
 cmd "syntax on"
 
 -- Tokynight Configuration
-g.tokyonight_style = "storm"
+g.tokyonight_style = "storm" -- "light"
 g.tokyonight_italic_functions = true
 g.tokyonight_transparent = true
 cmd[[colorscheme tokyonight]]
 
--- Base16 Configuration
+-- Base16 Onedark Configuration
 -- local base16 = require "base16"
 -- base16(base16.themes["onedark"], true)
 
--- Material Deep Ocean Configuration
--- g.material_style = "deep ocean"
--- g.material_italic_functions = true
--- require('material').set()
+-- Nord Configuration
+-- g.nord_disable_background = true
+-- require('nord').set()
 
 require "custom_highlights"
 

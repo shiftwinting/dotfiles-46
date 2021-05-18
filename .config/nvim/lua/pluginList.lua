@@ -9,8 +9,8 @@ return require("packer").startup(
         -- color related stuff
         use "folke/tokyonight.nvim"
         use "siduck76/nvim-base16.lua"
+        use "shaunsingh/nord.nvim"
         use "norcalli/nvim-colorizer.lua"
-        use "marko-cerovac/material.nvim"
 
         -- lsp stuff
         use "nvim-treesitter/nvim-treesitter"
@@ -21,6 +21,7 @@ return require("packer").startup(
         use "nvim-lua/plenary.nvim"
         use "folke/trouble.nvim"
         use "folke/lsp-colors.nvim"
+        -- use "kosayoda/nvim-lightbulb"
 
         -- Debugging stuff
         -- use {"mfussenegger/nvim-dap", opt = true} --TODO: Configure nvim-dap with UI and python.
@@ -47,10 +48,9 @@ return require("packer").startup(
         use "nvim-lua/popup.nvim"
 
         -- misc
-        use "tweekmonster/startuptime.vim"
         use "907th/vim-auto-save"
         use "karb94/neoscroll.nvim"
-        use "kdav5758/TrueZen.nvim"
+        use "folke/zen-mode.nvim"
         use "folke/which-key.nvim"
         use "sindrets/diffview.nvim"
         use {"markdown-preview.nvim", config = "vim.call('mkdp#util#install')"}     
@@ -60,9 +60,6 @@ return require("packer").startup(
           require("todo-comments").setup()
         end}
 
-        -- discord rich presence
-        -- TODO: Confgure rich presence
-        use "andweeb/presence.nvim"
 
         use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
     end,

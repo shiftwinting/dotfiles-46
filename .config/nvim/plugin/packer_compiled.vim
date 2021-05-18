@@ -71,10 +71,6 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
-  ["TrueZen.nvim"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/TrueZen.nvim"
-  },
   ["diffview.nvim"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/diffview.nvim"
@@ -108,10 +104,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
   },
-  ["material.nvim"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/material.nvim"
-  },
   neoformat = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/neoformat"
@@ -119,6 +111,10 @@ _G.packer_plugins = {
   ["neoscroll.nvim"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/neoscroll.nvim"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nord.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -172,14 +168,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
-  ["presence.nvim"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/presence.nvim"
-  },
-  ["startuptime.vim"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/startuptime.vim"
-  },
   ["telescope-media-files.nvim"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim"
@@ -220,6 +208,10 @@ _G.packer_plugins = {
   ["which-key.nvim"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/which-key.nvim"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/zen-mode.nvim"
   }
 }
 

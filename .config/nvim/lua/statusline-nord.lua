@@ -4,13 +4,13 @@ local gls = gl.section
 gl.short_line_list = {" "} -- keeping this table { } as empty will show inactive statuslines
 
 local colors = {
-    bg = "#1e222a",
+    bg = "#292D38",
     line_bg = "#1e222a",
     fg = "#D8DEE9",
     green = "#BBE67E",
     orange = "#FF8800",
     red = "#DF8890",
-    lightbg = "#282c34",
+    lightbg = "#9CDCFE",
     nord = "#81A1C1",
     greenYel = "#EBCB8B"
 }
@@ -135,7 +135,7 @@ gls.left[12] = {
 gls.right[1] = {
     GitIcon = {
         provider = function()
-            return "   "
+            return " "
         end,
         condition = require("galaxyline.provider_vcs").check_git_workspace,
         highlight = {colors.green, colors.line_bg}

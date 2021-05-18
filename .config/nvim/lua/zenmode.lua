@@ -1,47 +1,31 @@
-local true_zen = require("true-zen")
+require("zen-mode").setup {
+  window = {
+    backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+    -- height and width can be:
+    -- * an absolute number of cells when > 1
+    -- * a percentage of the width / height of the editor when <= 1
+    width = 120, -- width of the Zen window
+    height = 1, -- height of the Zen window
+    -- by default, no options are changed for the Zen window
+    -- uncomment any of the options below, or add other vim.wo options you want to apply
+    options = {
+      -- signcolumn = "no", -- disable signcolumn
+      -- number = false, -- disable number column
+      -- relativenumber = false, -- disable relative numbers
+      -- cursorline = false, -- disable cursorline
+      -- cursorcolumn = false, -- disable cursor column
+      -- foldcolumn = "0", -- disable fold column
+      -- list = false, -- disable whitespace characters
+    },
+  },
+  plugins = {
+    gitsigns = true, -- disables git signs
+  },
+  -- callback where you can add custom code when the Zen window opens
+  on_open = function(win)
+  end,
+  -- callback where you can add custom code when the Zen window closes
+  on_close = function()
+  end,
+}
 
-true_zen.setup(
-    {
-        true_false_commands = false,
-        cursor_by_mode = false,
-        before_minimalist_mode_shown = true,
-        before_minimalist_mode_hidden = true,
-        after_minimalist_mode_shown = true,
-        after_minimalist_mode_hidden = true,
-        bottom = {
-            hidden_laststatus = 0,
-            hidden_ruler = false,
-            hidden_showmode = false,
-            hidden_showcmd = false,
-            hidden_cmdheight = 1,
-            shown_laststatus = 2,
-            shown_ruler = true,
-            shown_showmode = false,
-            shown_showcmd = false,
-            shown_cmdheight = 1
-        },
-        top = {
-            hidden_showtabline = 0,
-            shown_showtabline = 2
-        },
-        left = {
-            hidden_number = false,
-            hidden_relativenumber = false,
-            hidden_signcolumn = "no",
-            shown_number = true,
-            shown_relativenumber = false,
-            shown_signcolumn = "yes"
-        },
-        ataraxis = {
-            just_do_it_for_me = false,
-            left_padding = 37,
-            right_padding = 37,
-            top_padding = 2,
-            bottom_padding = 2,
-            custome_bg = "#1e222a"
-        },
-        integrations = {
-            integration_galaxyline = true
-        }
-    }
-)
