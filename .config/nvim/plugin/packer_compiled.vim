@@ -95,9 +95,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+  },
+  ["lua-dev.nvim"] = {
+    loaded = true,
+    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lua-dev.nvim"
   },
   ["markdown-preview.nvim"] = {
     config = { "vim.call('mkdp#util#install')" },
@@ -135,6 +147,15 @@ _G.packer_plugins = {
   ["nvim-compe"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nvim-compe"
+  },
+  ["nvim-dap"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/shivansh/.local/share/nvim/site/pack/packer/opt/nvim-dap"
+  },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nvim-lightbulb"
   },
   ["nvim-lspconfig"] = {
     loaded = true,

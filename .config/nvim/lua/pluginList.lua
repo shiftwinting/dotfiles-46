@@ -21,10 +21,13 @@ return require("packer").startup(
         use "nvim-lua/plenary.nvim"
         use "folke/trouble.nvim"
         use "folke/lsp-colors.nvim"
-        -- use "kosayoda/nvim-lightbulb"
+        use "kosayoda/nvim-lightbulb"
+        use "glepnir/lspsaga.nvim"
+        use "ray-x/lsp_signature.nvim"
+        use "folke/lua-dev.nvim"
 
         -- Debugging stuff
-        -- use {"mfussenegger/nvim-dap", opt = true} --TODO: Configure nvim-dap with UI and python.
+        use {"mfussenegger/nvim-dap", opt = true} --TODO: Configure nvim-dap with UI and python.
 
         -- GitHub related
         use "lewis6991/gitsigns.nvim"

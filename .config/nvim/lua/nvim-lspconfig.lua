@@ -37,8 +37,11 @@ end
 
 local lspconf = require("lspconfig")
 
+local luadev = require("lua-dev").setup()
+lspconf.sumneko_lua.setup(luadev)
+
 -- these langs require same lspconfig so put em all in a table and loop through!
-local servers = {"pyright", "bashls", "clangd", "ccls"}
+local servers = {"html", "cssls", "pyright", "bashls", "clangd", "ccls"}
 
 for _, lang in ipairs(servers) do
     lspconf[lang].setup {
@@ -51,39 +54,6 @@ end
 local vls_binary = "/usr/local/bin/vls"
 lspconf.vls.setup {
     cmd = {vls_binary}
-}
-
--- lua lsp settings
-USER = "/home/" .. vim.fn.expand("$USER")
-
-local sumneko_root_path = USER .. "/.config/lua-language-server"
-local sumneko_binary = USER .. "/.config/lua-language-server/bin/Linux/lua-language-server"
-
-lspconf.sumneko_lua.setup {
-    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
-    root_dir = function()
-        return vim.loop.cwd()
-    end,
-    settings = {
-        Lua = {
-            runtime = {
-                version = "LuaJIT",
-                path = vim.split(package.path, ";")
-            },
-            diagnostics = {
-                globals = {"vim"}
-            },
-            workspace = {
-                library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
-                }
-            },
-            telemetry = {
-                enable = false
-            }
-        }
-    }
 }
 
 -- replace the default lsp diagnostic letters with prettier symbols
