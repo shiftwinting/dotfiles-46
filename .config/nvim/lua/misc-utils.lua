@@ -25,7 +25,6 @@ opt("o", "updatetime", 250) -- update interval for gitsigns
 opt("o", "clipboard", "unnamedplus")
 opt("o", "timeoutlen", 500)
 
-
 -- for indenline
 opt("b", "expandtab", true)
 opt("b", "shiftwidth", 2)
@@ -41,5 +40,6 @@ function M.has_width_gt(cols)
     -- Check if the windows width is greater than a given number of columns
     return vim.fn.winwidth(0) / 2 > cols
 end
-
+-- file extension specific tabbing
+vim.cmd([[autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4]])
 return M

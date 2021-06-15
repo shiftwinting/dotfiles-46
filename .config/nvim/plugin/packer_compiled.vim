@@ -14,7 +14,7 @@ try
 lua << END
   local time
   local profile_info
-  local should_profile = false
+  local should_profile = "True"
   if should_profile then
     local hrtime = vim.loop.hrtime
     profile_info = {}
@@ -46,7 +46,7 @@ local function save_profiles(threshold)
   _G._packer.profile_output = results
 end
 
-time("Luarocks path setup", true)
+time([[Luarocks path setup]], true)
 local package_path_str = "/home/shivansh/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/shivansh/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/shivansh/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/shivansh/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
 local install_cpath_pattern = "/home/shivansh/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
@@ -57,23 +57,24 @@ if not string.find(package.cpath, install_cpath_pattern, 1, true) then
   package.cpath = package.cpath .. ';' .. install_cpath_pattern
 end
 
-time("Luarocks path setup", false)
-time("try_loadstring definition", true)
+time([[Luarocks path setup]], false)
+time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
   local success, result = pcall(loadstring(s))
   if not success then
-    print('Error running ' .. component .. ' for ' .. name)
-    error(result)
+    vim.schedule(function()
+      vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
+    end)
   end
   return result
 end
 
-time("try_loadstring definition", false)
-time("Defining packer_plugins", true)
+time([[try_loadstring definition]], false)
+time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["diffview.nvim"] = {
+  ["dashboard-nvim"] = {
     loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/diffview.nvim"
+    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -95,26 +96,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim"
   },
-  ["lsp_signature.nvim"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
-  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
-  },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
-  },
-  ["lua-dev.nvim"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lua-dev.nvim"
-  },
-  ["markdown-preview.nvim"] = {
-    config = { "vim.call('mkdp#util#install')" },
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
   },
   neoformat = {
     loaded = true,
@@ -124,17 +108,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/neoscroll.nvim"
   },
-  ["nord.nvim"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nord.nvim"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
-  },
-  ["nvim-base16.lua"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nvim-base16.lua"
   },
   ["nvim-bufferline.lua"] = {
     loaded = true,
@@ -148,11 +124,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
-  ["nvim-dap"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/opt/nvim-dap"
-  },
   ["nvim-lightbulb"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nvim-lightbulb"
@@ -160,6 +131,10 @@ _G.packer_plugins = {
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-lspinstall"] = {
+    loaded = true,
+    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -172,10 +147,6 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
-  },
-  ["octo.nvim"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/octo.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -236,15 +207,11 @@ _G.packer_plugins = {
   }
 }
 
-time("Defining packer_plugins", false)
+time([[Defining packer_plugins]], false)
 -- Config for: todo-comments.nvim
-time("Config for todo-comments.nvim", true)
+time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\2\2;\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time("Config for todo-comments.nvim", false)
--- Config for: markdown-preview.nvim
-time("Config for markdown-preview.nvim", true)
-vim.call('mkdp#util#install')
-time("Config for markdown-preview.nvim", false)
+time([[Config for todo-comments.nvim]], false)
 if should_profile then save_profiles() end
 
 END

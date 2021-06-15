@@ -1,4 +1,4 @@
-function on_attach(client)
+function on_attach(client, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
@@ -35,26 +35,53 @@ function on_attach(client)
     end
 end
 
-local lspconf = require("lspconfig")
+-- lspInstall + lspconfig stuff
 
-local luadev = require("lua-dev").setup()
-lspconf.sumneko_lua.setup(luadev)
+local function setup_servers()
+    require "lspinstall".setup()
 
--- these langs require same lspconfig so put em all in a table and loop through!
-local servers = {"html", "cssls", "pyright", "bashls", "clangd", "ccls"}
+    local lspconf = require("lspconfig")
+    local servers = require "lspinstall".installed_servers()
 
-for _, lang in ipairs(servers) do
-    lspconf[lang].setup {
-        on_attach = on_attach,
-        root_dir = vim.loop.cwd
-    }
+    for _, lang in pairs(servers) do
+        if lang ~= "lua" then
+            lspconf[lang].setup {
+                on_attach = on_attach,
+                root_dir = vim.loop.cwd
+            }
+        elseif lang == "lua" then
+            lspconf[lang].setup {
+                root_dir = function()
+                    return vim.loop.cwd()
+                end,
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = {"vim"}
+                        },
+                        workspace = {
+                            library = {
+                                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                                [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
+                            }
+                        },
+                        telemetry = {
+                            enable = false
+                        }
+                    }
+                }
+            }
+        end
+    end
 end
 
--- vls conf example
-local vls_binary = "/usr/local/bin/vls"
-lspconf.vls.setup {
-    cmd = {vls_binary}
-}
+setup_servers()
+
+-- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+require "lspinstall".post_install_hook = function()
+    setup_servers() -- reload installed servers
+    vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+end
 
 -- replace the default lsp diagnostic letters with prettier symbols
 vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})

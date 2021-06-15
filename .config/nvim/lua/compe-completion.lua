@@ -14,16 +14,9 @@ require "compe".setup {
     max_menu_width = 100,
     documentation = true,
     source = {
-        path = true,
-        buffer = {kind = "﬘" , true},
-        calc = true,
+        buffer = {kind = "﬘", true},
         vsnip = {kind = "﬌"}, --replace to what sign you prefer
-        nvim_lsp = true,
-        nvim_lua = true,
-        spell = true,
-        tags = true,
-        snippets_nvim = true,
-        treesitter = true
+        nvim_lsp = true
     }
 }
 
