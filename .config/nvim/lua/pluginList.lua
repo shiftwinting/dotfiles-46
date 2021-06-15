@@ -1,11 +1,9 @@
--- using { } for using different branch , loading plugin with certain commands etc
 return require("packer").startup(
     function()
         use "wbthomason/packer.nvim"
 
-        -- color related stuff
+        -- color/UI related stuff
         use "folke/tokyonight.nvim"
-        use "norcalli/nvim-colorizer.lua"
 
         -- lang/lsp stuff
         use "nvim-treesitter/nvim-treesitter"
@@ -15,9 +13,10 @@ return require("packer").startup(
         use "sbdchd/neoformat"
         use "nvim-lua/plenary.nvim"
         use "kabouzeid/nvim-lspinstall"
-        use "folke/trouble.nvim"	
-        use "folke/lsp-colors.nvim"	
+        use "folke/trouble.nvim"
+        use "folke/lsp-colors.nvim"
         use "kosayoda/nvim-lightbulb"
+        use "ray-x/lsp_signature.nvim"
 
         use "lewis6991/gitsigns.nvim"
         use "akinsho/nvim-bufferline.lua"
@@ -38,6 +37,7 @@ return require("packer").startup(
         use "nvim-lua/popup.nvim"
 
         -- misc
+        use "sudormrfbin/cheatsheet.nvim"
         use "glepnir/dashboard-nvim"
         use "907th/vim-auto-save"
         use "karb94/neoscroll.nvim"
@@ -46,9 +46,20 @@ return require("packer").startup(
         use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
 
         -- Configure and list todo-comments	
-        use { "folke/todo-comments.nvim", config = function()	
-          require("todo-comments").setup()	
-        end}
+        use {
+          "folke/todo-comments.nvim", 
+          config = function()	
+            require("todo-comments").setup()	
+          end
+        }
+
+        use {
+          "ahmedkhalf/lsp-rooter.nvim",
+          config = function()
+            require("lsp-rooter").setup{}
+          end
+        }
+
     end,
     {
         display = {

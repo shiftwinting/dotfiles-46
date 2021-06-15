@@ -2,9 +2,10 @@ local ts_config = require("nvim-treesitter.configs")
 
 ts_config.setup {
     ensure_installed = {
-        "javascript",
-        "html",
-        "css",
+        "yaml",
+        "dockerfile",
+        "json",
+        "c",
         "bash",
         "lua",
         "json",
