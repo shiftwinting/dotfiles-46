@@ -3,16 +3,16 @@ My Ubuntu dotfiles.
 
 ## Screenshots
 
-#### Defauly view in nvim
-![nvim_001_auto_x2_colored(1)](https://user-images.githubusercontent.com/69356296/118402339-1ee38700-b687-11eb-994d-73f7773e0c53.jpg)
+#### Neovim - TokyoNight
 
-#### Reviewing PRs in nvim
-![nvim_002_auto_x2_colored](https://user-images.githubusercontent.com/69356296/118402340-2014b400-b687-11eb-83ef-d96d79b54e4a.jpg)
+![Screenshot from 2021-06-15 06-30-29](https://user-images.githubusercontent.com/69356296/121977259-3788af00-cda3-11eb-960f-e1186fa6bbff.png)
+
+![Screenshot from 2021-06-15 06-19-59](https://user-images.githubusercontent.com/69356296/121977265-3c4d6300-cda3-11eb-8487-202915b88087.png)
 
 
 #### Piston CLI, my favourite <3
-![laptop_piston_cli_example](https://user-images.githubusercontent.com/69356296/118402370-49cddb00-b687-11eb-9a33-111781555a62.png)
 
+![Screenshot from 2021-06-15 06-35-09](https://user-images.githubusercontent.com/69356296/121977542-df05e180-cda3-11eb-8adf-96627cf8b0b6.png)
 
 
 Credit to [siduck76](https://github.com/siduck76) for his [beautiful nvim config](https://github.com/siduck76/neovim-dotfiles).
