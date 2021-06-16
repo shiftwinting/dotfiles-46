@@ -6,12 +6,10 @@ require "top-bufferline"
 require "statusline"
 
 require("neoscroll").setup() -- smooth scroll
-require("lsp_signature").on_attach()
 
 -- lsp stuff
 require "nvim-lspconfig"
 require "compe-completion"
-require "lsp_signature".on_attach()
 
 local cmd = vim.cmd
 local g = vim.g
@@ -58,4 +56,4 @@ vim.api.nvim_exec([[
 
 require "zenmode"
 require "whichkey"
-require "dashboard"
+

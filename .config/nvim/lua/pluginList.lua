@@ -38,7 +38,6 @@ return require("packer").startup(
 
         -- misc
         use "sudormrfbin/cheatsheet.nvim"
-        use "glepnir/dashboard-nvim"
         use "907th/vim-auto-save"
         use "karb94/neoscroll.nvim"
         use "folke/zen-mode.nvim"

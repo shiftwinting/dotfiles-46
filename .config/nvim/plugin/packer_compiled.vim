@@ -76,10 +76,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/cheatsheet.nvim"
   },
-  ["dashboard-nvim"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/friendly-snippets"
@@ -106,7 +102,6 @@ _G.packer_plugins = {
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lsp-rooter.nvim"
   },
   ["lsp_signature.nvim"] = {
-    config = { "\27LJ\2\2?\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14on_attach\18lsp_signature\frequire\0" },
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
   },
@@ -218,18 +213,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lsp_signature.nvim
-time([[Config for lsp_signature.nvim]], true)
-try_loadstring("\27LJ\2\2?\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14on_attach\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
-time([[Config for lsp_signature.nvim]], false)
--- Config for: lsp-rooter.nvim
-time([[Config for lsp-rooter.nvim]], true)
-try_loadstring("\27LJ\2\2<\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\15lsp-rooter\frequire\0", "config", "lsp-rooter.nvim")
-time([[Config for lsp-rooter.nvim]], false)
 -- Config for: todo-comments.nvim
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\2\2;\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
 time([[Config for todo-comments.nvim]], false)
+-- Config for: lsp-rooter.nvim
+time([[Config for lsp-rooter.nvim]], true)
+try_loadstring("\27LJ\2\2<\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\15lsp-rooter\frequire\0", "config", "lsp-rooter.nvim")
+time([[Config for lsp-rooter.nvim]], false)
 if should_profile then save_profiles() end
 
 END
