@@ -76,10 +76,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/cheatsheet.nvim"
   },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/friendly-snippets"
-  },
   ["galaxyline.nvim"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
@@ -197,10 +193,6 @@ _G.packer_plugins = {
   ["vim-devicons"] = {
     loaded = true,
     path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/vim-devicons"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/shivansh/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   },
   ["which-key.nvim"] = {
     loaded = true,

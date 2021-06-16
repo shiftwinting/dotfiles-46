@@ -25,8 +25,8 @@ return require("packer").startup(
         use "alvan/vim-closetag"
 
         -- snippet support
-        use "hrsh7th/vim-vsnip"
-        use "rafamadriz/friendly-snippets"
+        -- use "hrsh7th/vim-vsnip"
+        -- use "rafamadriz/friendly-snippets"
 
         -- file managing , picker etc
         use "kyazdani42/nvim-tree.lua"
