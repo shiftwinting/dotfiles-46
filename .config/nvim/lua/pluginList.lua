@@ -38,6 +38,7 @@ return require("packer").startup(
         use "nvim-lua/popup.nvim"
 
         -- misc
+        use {'iamcco/markdown-preview.nvim', config = "vim.call('mkdp#util#install')"}
         use "sudormrfbin/cheatsheet.nvim"
         use "907th/vim-auto-save"
         use "karb94/neoscroll.nvim"

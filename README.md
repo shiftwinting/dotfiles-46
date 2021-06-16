@@ -16,3 +16,4 @@ My Ubuntu dotfiles.
 
 
 Credit to [siduck76](https://github.com/siduck76) for his [beautiful nvim config](https://github.com/siduck76/neovim-dotfiles).
+
