@@ -4,6 +4,7 @@ return require("packer").startup(
 
         -- color/UI related stuff
         use "folke/tokyonight.nvim"
+        use "norcalli/nvim-colorizer.lua"
 
         -- lang/lsp stuff
         use "nvim-treesitter/nvim-treesitter"
