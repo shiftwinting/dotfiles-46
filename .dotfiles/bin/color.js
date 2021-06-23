@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/home/shivansh/.nvm/versions/node/v16.3.0/bin/node
 
 /**
  * HTML color converter

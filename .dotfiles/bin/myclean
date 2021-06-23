@@ -5,7 +5,7 @@ YELLOW="\033[38;5;11m"
 
 read -p "$(echo -e $YELLOW"Would you like to clean up __pycache__? (y/n)" $RESET)" input
 if [ "$input" = "y" ]; then
-  find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
+  find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs sudo rm -rf
 fi
 
 # ---
@@ -34,6 +34,8 @@ fi
 
 read -p "$(echo -e $YELLOW"Would you like to clean docker? (y/n)" $RESET)"  input
 if [ "$input" = "y" ]; then
+  # Start docker if not started
+  sudo systemctl start docker.service
   docker rm $(docker ps --all -q -f status=exited)
   docker volume rm $(docker volume ls -qf dangling=true)
 fi

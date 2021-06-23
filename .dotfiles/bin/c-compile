@@ -2,8 +2,8 @@
 
 mkdir -p "builds"
 
-fileNoExtension="${1%%.*}"
+fileNoExtension="${1%%.*}.out"
 
-/usr/bin/gcc-10 -g $1 -o builds/$fileNoExtension
+/usr/bin/gcc -g $1 -o builds/$fileNoExtension
 
 ./builds/$fileNoExtension

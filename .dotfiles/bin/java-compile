@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+fileNoExtension="${1%%.*}"
+
+javac $1 
+java $fileNoExtension
+rm "$fileNoExtension.class"
