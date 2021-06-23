@@ -12,7 +12,7 @@ alias c="clear"
 alias ch="history -c && > ~/.bash_history && > ~/.zsh_history"
 alias d="cd ~/Desktop"
 alias g="git"
-alias py="python3.8"
+alias py="python"
 alias ll="ls -l"
 alias m="man"
 alias search='history|grep'
@@ -37,3 +37,5 @@ alias gitreset="git fetch upstream && git reset --hard upstream/main && git push
 
 # Exa - modern ls
 alias ls='exa -al --color=always --group-directories-first --header'
+
+alias lg='lazygit'

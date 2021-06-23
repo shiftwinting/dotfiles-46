@@ -8,9 +8,15 @@
 
 # Export path to root of dotfiles repo
 export DOTFILES=${DOTFILES:="$HOME/.dotfiles"}
+export PATH="$PATH:$HOME/.poetry/bin:$HOME/.cargo/bin:$HOME/.deta/bin:$HOME/go/bin"
 
-# Source zplug manager (https://github.com/zplug/zplug)
-source "/usr/share/zplug/init.zsh"
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+source ~/.zplug/init.zsh
 
 # Locale
 export LC_ALL=en_US.UTF-8
@@ -97,4 +103,6 @@ zplug load
 # Add bash aliases in zsh shell
 source /home/shivansh/.bash_aliases
 
-export PATH="$HOME/.poetry/bin:$PATH"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
