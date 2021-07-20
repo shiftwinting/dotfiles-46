@@ -26,11 +26,6 @@ M.config = function()
                 color = colors.teal,
                 name = "ts"
             },
-            kt = {
-                icon = "󱈙",
-                color = colors.orange,
-                name = "kt"
-            },
             png = {
                 icon = "",
                 color = colors.dark_purple,

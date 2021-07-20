@@ -98,14 +98,6 @@ map("n", "<C-n>", ":NvimTreeToggle<CR>", opt)
 -- format code
 map("n", "<Leader>fm", [[<Cmd> Neoformat<CR>]], opt)
 
--- dashboard stuff
-map("n", "<Leader>fw", [[<Cmd> Telescope live_grep<CR>]], opt)
-map("n", "<Leader>db", [[<Cmd> Dashboard<CR>]], opt)
-map("n", "<Leader>fn", [[<Cmd> DashboardNewFile<CR>]], opt)
-map("n", "<Leader>bm", [[<Cmd> DashboardJumpMarks<CR>]], opt)
-map("n", "<C-s>l", [[<Cmd> SessionLoad<CR>]], opt)
-map("n", "<C-s>s", [[<Cmd> SessionSave<CR>]], opt)
-
 -- Telescope
 map("n", "<Leader>gt", [[<Cmd> Telescope git_status <CR>]], opt)
 map("n", "<Leader>cm", [[<Cmd> Telescope git_commits <CR>]], opt)
